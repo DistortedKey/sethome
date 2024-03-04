@@ -10,6 +10,8 @@ execute as @e[type=marker] unless entity @s[scores={Math=0}] run scoreboard play
 execute as @e[type=marker,scores={Math=0}] run scoreboard players operation @s Math = @s HomeNum
 scoreboard players operation @e[type=marker,scores={Math=1..3}] Math -= @s home
 
+tellraw @s ["",{"text":"teleporting to home ","color":"aqua"},{"score":{"name":"@s","objective":"home"},"color":"green"}]
+
 
 # tp to the marker
 tp @s @e[type=marker,scores={Math=0},limit=1,sort=nearest]

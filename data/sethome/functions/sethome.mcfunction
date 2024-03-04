@@ -22,6 +22,8 @@ execute at @s run scoreboard players operation @e[distance=...1,type=marker] Pla
 execute at @s run scoreboard players operation @e[distance=...1,type=marker] HomeNum = @s sethome
 execute at @s run forceload add ~ ~
 
+tellraw @s ["",{"text":"successfully set home ","color":"aqua"},{"score":{"name":"@s","objective":"sethome"},"color":"green"}]
+
 # reset player score
 scoreboard players set @s sethome 0
 
