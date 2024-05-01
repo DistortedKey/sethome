@@ -8,7 +8,7 @@ execute as @e[type=marker] unless entity @s[scores={Math=0}] run scoreboard play
 
 # repeat filtering process for home # (doesnt have to be an exact match, can be 1-3 for a max of 3 homes)
 execute as @e[type=marker,scores={Math=0}] run scoreboard players operation @s Math = @s HomeNum
-scoreboard players operation @e[type=marker,scores={Math=1..3}] Math -= @s home
+scoreboard players operation @e[type=marker,scores={Math=1..}] Math -= @s home
 
 tellraw @s ["",{"text":"teleporting to home ","color":"aqua"},{"score":{"name":"@s","objective":"home"},"color":"green"}]
 
